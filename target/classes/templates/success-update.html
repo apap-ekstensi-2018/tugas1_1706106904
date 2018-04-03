@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head
+	th:replace="fragments/fragment :: topfragment(title='Sukses Ubah Mahasiswa')">
+	</head>
+
+	<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	<div class="container-fluid">
+	<h2>Sukses!</h2>
+		<h3 th:text="'Mahasiswa dengan NPM '+${student.npm}+' berhasil diubah'">berhasil diubah</h3>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head
+	th:replace="fragments/fragment :: topfragment(title='Persentase Kelulusan')">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	<div class="container-fluid">
+		<h2>Persentase Kelulusan</h2>
+
+		<div class="row">
+			<div class="col-sm"><h5>Tahun</h5></div>
+			<div class="col-sm"><h5 th:text="${kelulusan.tahun_masuk}"></h5></div>
+			<div class="col-sm"><h3 th:text="${persentase} + '%'"></h3></div>
+			<div class="w-100 d-none d-md-block"></div>
+			<div class="col-sm"><h5>Program Studi</h5></div>
+			<div class="col-sm"><h5 th:text="${kelulusan.nama_prodi}"></h5></div>
+			<div class="col-sm"><h4 th:text="${totalMahasiswaLulus} + ' dari ' + ${totalMahasiswa}
+			+ ' Mahasiswa Telah Lulus'"></h4></div>
+			<div class="w-100 d-none d-md-block"></div>
+			<div class="col-sm"><h5>Fakultas</h5></div>
+			<div class="col-sm"><h5 th:text="${kelulusan.nama_fakultas}"></h5></div>
+			<div class="col-sm"></div>
+			<div class="w-100 d-none d-md-block"></div>
+			<div class="col-sm"><h5>Universitas</h5></div>
+			<div class="col-sm"><h5 th:text="${kelulusan.nama_univ}"></h5></div>
+			<div class="col-sm"></div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head
+	th:replace="fragments/fragment :: topfragment(title='View Student by NPM')"></head>
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	<div class="container">
+	<h2 th:text="'Lihat Data Mahasiswa - ' + ${student.npm}"></h2>
+		<div class="row">
+			<div class="col-6 col-sm-4"><h5>NIK</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.npm}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Nama</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.nama}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Tempat/Tanggal Lahir</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.tempat_lahir} + ' ' + ${student.tanggal_lahir}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Program Studi</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${prodi.nama_prodi}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Fakultas</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${fakultas.nama_fakultas}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Universitas</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${univ.nama_univ}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Jenis Kelamin</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.jenis_kelamin}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Agama</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.agama}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Golongan Darah</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.golongan_darah}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Tahun Masuk</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.tahun_masuk}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Jalur Masuk</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.jalur_masuk}"></h5></div>
+			<div class="w-100"></div>
+			<div class="col-6 col-sm-4"><h5>Status</h5></div>
+			<div class="col-6 col-sm-4"><h5 th:text="${student.status}"></h5></div>
+			<div class="w-100"></div>
+		</div>
+	</div>
+	
+	
+
+</body>
+</html>
+

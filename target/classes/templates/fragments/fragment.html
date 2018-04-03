@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="topfragment(title)">
+	<title th:text="${title}"></title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/popper.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.bundle.js"></script>
+	
+	<link rel="stylesheet" href="/css/selectize.css" />
+	<link rel="stylesheet" href="/css/datatables.min.css" />
+	<script src="/js/selectize.js"></script>
+	<script src="/js/datatables.min.js"></script>
+	
+	
+       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css"/>
+       <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+       <script>
+    		$(document).ready(function(){
+    			$('#student-table').dataTable();
+    		});
+    		$('.navbar-nav li').click(function(){
+   		 	$('.navbar-nav li').removeClass('active');
+   		    $(this).addClass('active');
+   		});
+    	</script>
+    
+</head>
+<body>
+	<div th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="/">SI Kemahasiswaan</a>
+			<button class="navbar-toggler" type="button" 
+				data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-exapanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item" th:classappend="${title == 'Home' ? 'active':''}">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+					<li class="nav-item" th:classappend="${title == 'Tambah Mahasiswa' ? 'active':''}">
+						<a class="nav-link" href="/mahasiswa/tambah">Tambah Mahasiswa</a>
+					</li>
+					<li class="nav-item" th:classappend="${title == 'Kelulusan Mahasiswa' ? 'active':''}">
+						<a class="nav-link" href="/kelulusan">Kelulusan Mahasiswa</a>
+					</li>
+					<li class="nav-item" th:classappend="${title == 'Cari Mahasiswa' ? 'active':''}">
+						<a class="nav-link" href="/mahasiswa/cari">Cari Mahasiswa</a>
+					</li>
+				</ul>
+				
+				
+			</div>
+		</nav>
+	</div>
+	
+
+	<div th:fragment="footer">
+		<hr />
+		<h5>Copyright 2018 Pance Satria Naibaho</h5>
+	</div>
+</body>
+</html>

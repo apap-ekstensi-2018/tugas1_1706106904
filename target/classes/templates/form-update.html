@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<head
+	th:replace="fragments/fragment :: topfragment(title='Update student')"></head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	<div class="container-fluid">
+		<h1 class="page-header">Update Student</h1>
+
+		<form action="/mahasiswa/ubah/submit" th:object="${student}"
+			method="post">
+			<input type="number"
+					class="form-control" id="id" th:field="*{id}"
+					th:value="${student.id}" hidden="true"/>
+					<input type="text"
+					class="form-control" id="npm" th:field="*{npm}"
+					th:value="${student.npm}" hidden="true"/>
+			<div class="form-group">
+				<label for="namaLengkap">Nama Lengkap</label> <input type="text"
+					class="form-control" id="namaLengkap" th:field="*{nama}"
+					th:value="${student.nama}" required="true"/>
+			</div>
+			<div class="form-group">
+				<label for="tempatLahir">Tempat Lahir</label> <input type="text"
+					class="form-control" id="tempatLahir" th:field="*{tempat_lahir}"
+					th:value="${student.tempat_lahir}" required="true"/>
+			</div>
+			<div class="form-group">
+				<label for="tanggalLahir">Tanggal Lahir</label> <input type="text"
+					class="form-control" id="tanggalLahir" th:field="*{tanggal_lahir}"
+					th:value="${student.tanggal_lahir}" required="true"/>
+			</div>
+			<div class="form-group">
+				<label for="jenisKelamin">Jenis Kelamin</label><br /> <select
+					id="jenisKelamin" name="jenisKelamin" th:field="*{jenis_kelamin}"
+					th:value="${student.jenis_kelamin}">
+					<option th:value="0">Laki-laki</option>
+					<option th:value="1">Perempuan</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="agama">Agama</label><br /> <select id="agama"
+					name="agama" th:field="*{agama}" th:value="${student.agama}">
+					<option th:value="Islam">Islam</option>
+					<option th:value="Protestan">Protestan</option>
+					<option th:value="Katolik">Katolik</option>
+					<option th:value="Konghucu">Konghucu</option>
+					<option th:value="Hindu">Hindu</option>
+					<option th:value="Budha">Budha</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="golonganDarah">Golongan Darah</label><br /> <select
+					id="golonganDarah" name="golonganDarah"
+					th:field="*{golongan_darah}" th:value="${student.golongan_darah}">
+					<option th:value="O">O</option>
+					<option th:value="A">A</option>
+					<option th:value="B">B</option>
+					<option th:value="AB">AB</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="status">Status</label><br /> <select id="status"
+					name="status" th:field="*{status}" th:value="${student.status}">
+					<option th:value="Aktif">Aktif</option>
+					<option th:value="Lulus">Lulus</option>
+					<option th:value="Drop-Out">Drop Out</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="tahunMasuk">Tahun Masuk</label> <input type="number"
+					class="form-control" id="tahunMasuk" th:field="*{tahun_masuk}"
+					th:value="${student.tahun_masuk}" required="true"/>
+			</div>
+			<div class="form-group">
+				<label for="jalurMasuk">Jalur Masuk</label><br /> <select
+					id="jalurMasuk" name="jalurMasuk" th:field="*{jalur_masuk}"
+					th:value="${student.jalur_masuk}">
+					<option th:value="UndanganRegulerSNMPTN">Undangan
+						Reguler/SNMPTN</option>
+					<option th:value="UndanganOlimpiade">Undangan Olimpiade</option>
+					<option th:value="UndanganParalelPPKB">Undangan
+						Paralel/PPKB</option>
+					<option th:value="UjianTulisMandiri">Ujian Tulis Mandiri</option>
+					<option th:value="UjianTulisBersamaSBMPTN">Ujian Tulis
+						Bersama/SBMPTN</option>
+
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="idProgramStudi">Id Program Studi</label> <input
+					type="number" class="form-control" id="idProgramStudi"
+					th:field="*{id_prodi}" th:value="${student.id_prodi}" required="true"/>
+			</div>
+			<div>
+				<button type="submit" name="action" value="save"
+					class="btn btn-primary">Simpan</button>
+			</div>
+			<br />
+		</form>
+	</div>
+
+
+
+</body>
+
+</html>
+
